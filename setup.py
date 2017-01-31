@@ -86,12 +86,10 @@ setup(
     # http://python-packaging-user-guide.readthedocs.org/en/latest/requirements/
     # NOTE: packages are installed in reverse order
     install_requires=[
-		'readline',  # for shell autocomplete
         'rdflib-jsonld',
         'rdflib',
         'SPARQLWrapper',
 		'colorama',
-		'django',
         'requests',
         'pyfiglet',
         'click',
@@ -105,6 +103,8 @@ setup(
     extras_require = {
         # 'dev': ['check-manifest'],
         # 'test': ['coverage'],
+        'shell-autocomplete': ['readline'],
+        'viz': ['django'],
     },
 
     # If there are data files included in your packages that need to be
