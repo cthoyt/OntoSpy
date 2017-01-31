@@ -104,7 +104,6 @@ setup(
         # 'dev': ['check-manifest'],
         # 'test': ['coverage'],
         'shell-autocomplete': ['readline'],
-        'viz': ['django'],
     },
 
     # If there are data files included in your packages that need to be
