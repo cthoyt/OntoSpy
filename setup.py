@@ -1,6 +1,3 @@
-
-# trick to manage package versions in one place only
-# http://stackoverflow.com/questions/458550/standard-way-to-embed-version-into-python-package
 import re
 VERSIONFILE="ontospy/VERSION.py"
 verstrline = open(VERSIONFILE, "rt").read()
@@ -10,15 +7,10 @@ if mo:
     VERSIONSTRING = mo.group(1)
 else:
     raise RuntimeError("Unable to find version string in %s." % (VERSIONFILE,))
-
-
-
-
-# setup.py proper begins here
-
-from setuptools import setup, find_packages  # Always prefer setuptools over distutils
 from codecs import open  # To use a consistent encoding
 from os import path
+
+from setuptools import setup, find_packages  # Always prefer setuptools over distutils
 
 here = path.abspath(path.dirname(__file__))
 
@@ -89,18 +81,18 @@ setup(
         'rdflib-jsonld',
         'rdflib',
         'SPARQLWrapper',
-		'colorama',
+        'colorama',
         'requests',
         'pyfiglet',
         'click',
-        'colorama', 
+        'colorama',
         'pygments',
-	],
+    ],
 
     # List additional groups of dependencies here (e.g. development dependencies).
     # You can install these using the following syntax, for example:
     # $ pip install -e .[dev,test]
-    extras_require = {
+    extras_require={
         # 'dev': ['check-manifest'],
         # 'test': ['coverage'],
         'shell-autocomplete': ['readline'],
@@ -110,7 +102,8 @@ setup(
     # installed, specify them here.  If using Python 2.6 or less, then these
     # have to be included in MANIFEST.in as well.
     package_data={
-         'ontospy': ['viz/static/*.*', 'viz/templates/*.*', 'viz/templates/shared/*.*', 'viz/templates/splitter/*.*', 'viz/templates/markdown/*.*'],
+        'ontospy': ['viz/static/*.*', 'viz/templates/*.*', 'viz/templates/shared/*.*', 'viz/templates/splitter/*.*',
+                    'viz/templates/markdown/*.*'],
     },
 
     # Although 'package_data' is the preferred approach, in some case you may
